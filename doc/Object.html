@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>wiki.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-filter_links">#filter_links</a>
+    
+    <li ><a href="#method-i-get_html_contents">#get_html_contents</a>
+    
+    <li ><a href="#method-i-get_out_degree">#get_out_degree</a>
+    
+    <li ><a href="#method-i-get_text_contents">#get_text_contents</a>
+    
+    <li ><a href="#method-i-print">#print</a>
+    
+    <li ><a href="#method-i-sort_links">#sort_links</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Encoding.html">Encoding</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Page.html">Page</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-filter_links" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filter_links</span><span
+            class="method-args">(html_string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method <a
+href="Object.html#method-i-filter_links">#filter_links</a>: saves all links
+from html source code</p>
+
+<pre>returns a hash of links as keys and values of 0</pre>
+
+<h4 id="method-i-filter_links-label-Attribute">Attribute<span><a href="#method-i-filter_links-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>html_string: the source code of an html page</p>
+</li></ul>
+
+<h4 id="method-i-filter_links-label-Options">Options<span><a href="#method-i-filter_links-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-filter_links-label-Example">Example<span><a href="#method-i-filter_links-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-filter_links-label-%3E+filter_links%28html_string%29">&gt; <a href="Object.html#method-i-filter_links">#filter_links</a>(html_string)<span><a href="#method-i-filter_links-label-%3E+filter_links%28html_string%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="filter_links-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filter_links</span>(<span class="ruby-identifier">html_string</span>)
+        <span class="ruby-identifier">hash</span> = {}
+        <span class="ruby-comment"># Get links from HTML content</span>
+        <span class="ruby-identifier">link_regex</span> = <span class="ruby-regexp">/&lt;a href=&quot;\/wiki[^&gt;]*?&gt;/</span>
+        <span class="ruby-identifier">html_string</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">link_regex</span>)
+                <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">link</span><span class="ruby-operator">|</span>
+                        <span class="ruby-comment"># Remove special links</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">link</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/\/wiki\/(Book|Book_talk|Category|File|Forum|Help|Portal|Portal_talk|Special|Talk|Template|Thread|User|User_blog|User_talk|Wikipedia|Wikipedia_talk):/</span>
+                                <span class="ruby-comment"># Remove ?redirect=no links</span>
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">link</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/\?redirect=no/</span>
+                                        <span class="ruby-comment"># Remove links without title=&quot;...&quot;</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">link</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/title=&quot;.*?&quot;/</span>
+                                                <span class="ruby-comment"># Remove any fragments</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">link</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/(.*)#.*?(&quot;.*)/</span>
+                                                        <span class="ruby-identifier">link</span> = <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-node">$2</span>
+                                                <span class="ruby-keyword">end</span>
+                                                <span class="ruby-identifier">link</span> = <span class="ruby-identifier">link</span>.<span class="ruby-identifier">to_sym</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">hash</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">link</span>)
+                                                        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">link</span>] = <span class="ruby-value">0</span>
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">end</span>
+                }
+        }
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- filter_links-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- filter_links-method -->
+
+    
+      <div id="method-i-get_html_contents" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_html_contents</span><span
+            class="method-args">(url)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method <a
+href="Object.html#method-i-get_html_contents">#get_html_contents</a>:
+downloads the</p>
+
+<pre>html source of the given url and filters the hatnotes</pre>
+
+<h4 id="method-i-get_html_contents-label-Attribute">Attribute<span><a href="#method-i-get_html_contents-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>url: the url of the cource code to be downloaded</p>
+</li></ul>
+
+<h4 id="method-i-get_html_contents-label-Options">Options<span><a href="#method-i-get_html_contents-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-get_html_contents-label-Example">Example<span><a href="#method-i-get_html_contents-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-get_html_contents-label-%3E+get_html_contents%28http%3A%2F%2Fwikipedia.org%2Fwiki%2FEric_Cartman%29">&gt; <a href="Object.html#method-i-get_html_contents">#get_html_contents</a>(<a href="http://wikipedia.org/wiki/Eric_Cartman">wikipedia.org/wiki/Eric_Cartman</a>)<span><a href="#method-i-get_html_contents-label-%3E+get_html_contents%28http%3A%2F%2Fwikipedia.org%2Fwiki%2FEric_Cartman%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="get_html_contents-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_html_contents</span>(<span class="ruby-identifier">url</span>)
+        <span class="ruby-identifier">url_string</span>=<span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-comment"># Open page and store contents</span>
+        <span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span> 
+                <span class="ruby-identifier">url_string</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read</span>
+        }
+
+        <span class="ruby-comment"># Remove &quot;not to be confused with&quot; links</span>
+        <span class="ruby-identifier">hatnote_regex</span> = <span class="ruby-regexp">/&lt;div class=&quot;hatnote&quot;&gt;.*?&lt;\/div&gt;/</span>
+        <span class="ruby-identifier">html_string</span> = <span class="ruby-identifier">url_string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">hatnote_regex</span>,<span class="ruby-string">&quot;&quot;</span>)
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">html_string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_html_contents-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_html_contents-method -->
+
+    
+      <div id="method-i-get_out_degree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_out_degree</span><span
+            class="method-args">(url, topic)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method <a
+href="Object.html#method-i-get_out_degree">#get_out_degree</a>: given a
+base url and topic, finds</p>
+
+<pre>the number of pages that link to the given page</pre>
+
+<h4 id="method-i-get_out_degree-label-Attribute">Attribute<span><a href="#method-i-get_out_degree-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>url: the base url of the page</p>
+</li><li>
+<p>topic: the topic of the page</p>
+</li></ul>
+
+<h4 id="method-i-get_out_degree-label-Options">Options<span><a href="#method-i-get_out_degree-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-get_out_degree-label-Example">Example<span><a href="#method-i-get_out_degree-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-get_out_degree-label-%3E+get_out_degree%28url%2C+topic%29">&gt; <a href="Object.html#method-i-get_out_degree">#get_out_degree</a>(url, topic)<span><a href="#method-i-get_out_degree-label-%3E+get_out_degree%28url%2C+topic%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="get_out_degree-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_out_degree</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">topic</span>)
+        <span class="ruby-identifier">out_degree_url</span> = <span class="ruby-node">&quot;#{url}/wiki/Special:WhatLinksHere/#{topic}?limit=5000&quot;</span>
+        <span class="ruby-identifier">out_degree_string</span>=<span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">open</span>(<span class="ruby-identifier">out_degree_url</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span> 
+                <span class="ruby-identifier">out_degree_string</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read</span>
+        }
+
+        <span class="ruby-identifier">list_regex</span> = <span class="ruby-regexp">/&lt;ul id=&quot;mw-whatlinkshere-list&quot;&gt;.*?&lt;\/ul&gt;View/</span>
+        <span class="ruby-identifier">out_degree_string</span> = <span class="ruby-identifier">list_regex</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">out_degree_string</span>).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">out_links</span> = <span class="ruby-identifier">filter_links</span>(<span class="ruby-identifier">out_degree_string</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">out_links</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_out_degree-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_out_degree-method -->
+
+    
+      <div id="method-i-get_text_contents" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_text_contents</span><span
+            class="method-args">(html_string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method <a
+href="Object.html#method-i-get_text_contents">#get_text_contents</a>:
+filers html source code</p>
+
+<pre>to save only the text contennt of a url page</pre>
+
+<h4 id="method-i-get_text_contents-label-Attribute">Attribute<span><a href="#method-i-get_text_contents-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>html_string: the source code of an html page</p>
+</li></ul>
+
+<h4 id="method-i-get_text_contents-label-Options">Options<span><a href="#method-i-get_text_contents-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-get_text_contents-label-Example">Example<span><a href="#method-i-get_text_contents-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-get_text_contents-label-%3E+get_text_contents%28html_string%29">&gt; <a href="Object.html#method-i-get_text_contents">#get_text_contents</a>(html_string)<span><a href="#method-i-get_text_contents-label-%3E+get_text_contents%28html_string%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="get_text_contents-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_text_contents</span>(<span class="ruby-identifier">html_string</span>)
+        <span class="ruby-comment"># Remove HTML and scripts</span>
+        <span class="ruby-identifier">html_regex</span> = <span class="ruby-regexp">/&lt;head&gt;.*?&lt;\/head&gt;|&lt;script&gt;.*?&lt;\/script&gt;|&lt;noscript&gt;.*?&lt;\/noscript&gt;/</span>
+        <span class="ruby-identifier">text_string</span> = <span class="ruby-identifier">html_string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">html_regex</span>,<span class="ruby-string">&quot;&quot;</span>)
+
+        <span class="ruby-comment"># Remove tags</span>
+        <span class="ruby-identifier">tag_regex</span> = <span class="ruby-regexp">/&lt;[^&lt;&gt;]*?&gt;/</span>
+        <span class="ruby-identifier">text_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">tag_regex</span>,<span class="ruby-string">&quot;&quot;</span>)
+
+        <span class="ruby-comment"># Replace multiple spaces with one</span>
+        <span class="ruby-identifier">text_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\s{2,}/</span>,<span class="ruby-string">&quot; &quot;</span>)
+
+        <span class="ruby-comment"># Remove STX</span>
+        <span class="ruby-identifier">text_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\^B/</span>,<span class="ruby-string">&quot;&quot;</span>)
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">text_string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_text_contents-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_text_contents-method -->
+
+    
+      <div id="method-i-print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print</span><span
+            class="method-args">(x, objects, printed)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method print: Recursively print objects, according to their
+content,</p>
+
+<pre>depth, and whether or not they have already been expanded/printed</pre>
+
+<h4 id="method-i-print-label-Attribute">Attribute<span><a href="#method-i-print-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>x: the current object to print</p>
+</li><li>
+<p>objects: the page objects found earlier</p>
+</li><li>
+<p>print: pages that have already been printed (expanded)</p>
+</li></ul>
+
+<h4 id="method-i-print-label-Options">Options<span><a href="#method-i-print-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-print-label-Example">Example<span><a href="#method-i-print-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-print-label-%3E+print%28x%2C+objects%2C+printed%29">&gt; print(x, objects, printed)<span><a href="#method-i-print-label-%3E+print%28x%2C+objects%2C+printed%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="print-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">objects</span>, <span class="ruby-identifier">printed</span>)
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Page</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\t&quot;</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">depth</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-identifier">printed</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">topic</span>)
+                <span class="ruby-identifier">x</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">print</span>(<span class="ruby-identifier">child</span>, <span class="ruby-identifier">objects</span>, <span class="ruby-identifier">printed</span>)
+                }
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Symbol</span>
+                <span class="ruby-identifier">topic_regex</span> = <span class="ruby-regexp">/title=&quot;(.*?)&quot;/</span>
+                <span class="ruby-identifier">topic_regex</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot; &quot;</span>,<span class="ruby-string">&quot;_&quot;</span>))
+                <span class="ruby-identifier">this_topic</span> = <span class="ruby-node">$1</span>
+                
+                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">objects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">this_topic</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">printed</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">this_topic</span>)
+                        <span class="ruby-identifier">i</span> = <span class="ruby-identifier">objects</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">this_topic</span>)
+                        <span class="ruby-identifier">newX</span> = <span class="ruby-identifier">objects</span>[<span class="ruby-identifier">i</span>]
+                        <span class="ruby-identifier">printed</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">newX</span>)
+                        <span class="ruby-identifier">print</span>(<span class="ruby-identifier">newX</span>, <span class="ruby-identifier">objects</span>, <span class="ruby-identifier">printed</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">printed</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">this_topic</span>)
+                        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\t&quot;</span><span class="ruby-operator">*</span><span class="ruby-identifier">$distance</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">this_topic</span>
+                <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print-method -->
+
+    
+      <div id="method-i-sort_links" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sort_links</span><span
+            class="method-args">(linksHash, textToSearch)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method <a href="Object.html#method-i-sort_links">#sort_links</a>:
+given a list of links, sorts them by</p>
+
+<pre>frequency of the topic in the text given</pre>
+
+<h4 id="method-i-sort_links-label-Attribute">Attribute<span><a href="#method-i-sort_links-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>linksHash: a hashtable of html links</p>
+</li><li>
+<p>textToSearch: the text to search for mentions of each link</p>
+</li></ul>
+
+<h4 id="method-i-sort_links-label-Options">Options<span><a href="#method-i-sort_links-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-sort_links-label-Example">Example<span><a href="#method-i-sort_links-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-sort_links-label-%3E+sort_links%28linksHash%2C+textToSearch%29">&gt; <a href="Object.html#method-i-sort_links">#sort_links</a>(linksHash, textToSearch)<span><a href="#method-i-sort_links-label-%3E+sort_links%28linksHash%2C+textToSearch%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="sort_links-source">
+            <pre><span class="ruby-comment"># File wiki.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sort_links</span>(<span class="ruby-identifier">linksHash</span>, <span class="ruby-identifier">textToSearch</span>)
+        <span class="ruby-identifier">title_regex</span> = <span class="ruby-regexp">/title=&quot;(.*?)&quot;/</span>
+        <span class="ruby-identifier">linksHash</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">title</span> = <span class="ruby-identifier">title_regex</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>)
+                <span class="ruby-identifier">title</span> = <span class="ruby-node">$1</span>
+                
+                <span class="ruby-identifier">textToSearch</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">title</span>)
+                                <span class="ruby-identifier">linksHash</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+                }
+        }
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">linksHash</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span> }.<span class="ruby-identifier">reverse</span>].<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sort_links-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sort_links-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
